@@ -5,8 +5,11 @@ from time import time
 from uuid import uuid4
 from urllib.parse import urlparse
 import requests
+import os
 
-app = Flask(__name__)
+app = Flask(__name__, 
+    template_folder='templates',
+    static_folder='static')
 
 class Blockchain:
     def __init__(self):
@@ -103,3 +106,4 @@ def full_chain():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
+
